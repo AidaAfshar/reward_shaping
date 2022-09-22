@@ -22,8 +22,7 @@ def _build_no_collision(_):
 
 
 def _build_high_speed(_):
-    return lambda state, info: (np.clip(state['ego_vx'],
-                                        info['speed_lower_bound'], info['speed_lower_bound'])) / info['vx_limit']
+    return lambda state, info: info['speed_tol'] - abs(info['speed_upper_bound'] - state['ego_vx'])
 
 
 def _build_right_lane(_):
