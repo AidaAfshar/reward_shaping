@@ -4,14 +4,14 @@ from typing import TYPE_CHECKING, Optional, Union, Tuple, Callable, List
 from gym import spaces
 import numpy as np
 
-from reward_shaping.envs.highway_env_RSS.env_backend import utils
-from reward_shaping.envs.highway_env_RSS.env_backend.utils import Vector
-from reward_shaping.envs.highway_env_RSS.env_backend.vehicle.dynamics import BicycleVehicle
-from reward_shaping.envs.highway_env_RSS.env_backend.vehicle.kinematics import Vehicle
-from reward_shaping.envs.highway_env_RSS.env_backend.vehicle.controller import MDPVehicle
+from reward_shaping.envs.highway_env_original.env_backend import utils
+from reward_shaping.envs.highway_env_original.env_backend.utils import Vector
+from reward_shaping.envs.highway_env_original.env_backend.vehicle.dynamics import BicycleVehicle
+from reward_shaping.envs.highway_env_original.env_backend.vehicle.kinematics import Vehicle
+from reward_shaping.envs.highway_env_original.env_backend.vehicle.controller import MDPVehicle
 
 if TYPE_CHECKING:
-    from reward_shaping.envs.highway_env_RSS.env_backend.env.abstract import AbstractEnv
+    from reward_shaping.envs.highway_env_original.env_backend.env.abstract import AbstractEnv
 
 Action = Union[int, np.ndarray]
 

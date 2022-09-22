@@ -3,13 +3,13 @@ from typing import TYPE_CHECKING, Callable, List, Optional
 import numpy as np
 import pygame
 
-from reward_shaping.envs.highway_env_RSS.env_backend.env.action import ActionType, DiscreteMetaAction, ContinuousAction
-from reward_shaping.envs.highway_env_RSS.env_backend.road.graphics import WorldSurface, RoadGraphics
-from reward_shaping.envs.highway_env_RSS.env_backend.vehicle.graphics import VehicleGraphics
+from reward_shaping.envs.highway_env_original.env_backend.env.action import ActionType, DiscreteMetaAction, ContinuousAction
+from reward_shaping.envs.highway_env_original.env_backend.road.graphics import WorldSurface, RoadGraphics
+from reward_shaping.envs.highway_env_original.env_backend.vehicle.graphics import VehicleGraphics
 
 if TYPE_CHECKING:
-    from reward_shaping.envs.highway_env_RSS.env_backend.env import AbstractEnv
-    from reward_shaping.envs.highway_env_RSS.env_backend.env.abstract import Action
+    from reward_shaping.envs.highway_env_original.env_backend.env import AbstractEnv
+    from reward_shaping.envs.highway_env_original.env_backend.env.abstract import Action
 
 
 class EnvViewer(object):

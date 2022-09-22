@@ -3,10 +3,10 @@ import numpy as np
 import copy
 from collections import deque
 
-from reward_shaping.envs.highway_env_RSS.env_backend import utils
-from reward_shaping.envs.highway_env_RSS.env_backend.road.road import Road, LaneIndex
-from reward_shaping.envs.highway_env_RSS.env_backend.vehicle.objects import RoadObject, Obstacle, Landmark
-from reward_shaping.envs.highway_env_RSS.env_backend.utils import Vector
+from reward_shaping.envs.highway_env_original.env_backend import utils
+from reward_shaping.envs.highway_env_original.env_backend.road.road import Road, LaneIndex
+from reward_shaping.envs.highway_env_original.env_backend.vehicle.objects import RoadObject, Obstacle, Landmark
+from reward_shaping.envs.highway_env_original.env_backend.utils import Vector
 
 ROLES = ['npc', 'ego', 'sut']   # List of possible roles
 

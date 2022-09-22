@@ -3,9 +3,9 @@ from copy import deepcopy
 from typing import Tuple, List, Optional, Union
 import numpy as np
 
-from reward_shaping.envs.highway_env_RSS.env_backend import utils
-from reward_shaping.envs.highway_env_RSS.env_backend.road.spline import LinearSpline2D
-from reward_shaping.envs.highway_env_RSS.env_backend.utils import wrap_to_pi, Vector, get_class_path, class_from_path
+from reward_shaping.envs.highway_env_original.env_backend import utils
+from reward_shaping.envs.highway_env_original.env_backend.road.spline import LinearSpline2D
+from reward_shaping.envs.highway_env_original.env_backend.utils import wrap_to_pi, Vector, get_class_path, class_from_path
 
 
 class AbstractLane(object):

@@ -5,8 +5,8 @@ import numpy as np
 from reward_shaping.envs.highway_env_RSS.env_backend import utils
 
 if TYPE_CHECKING:
-    from reward_shaping.envs.highway_env_RSS.env_backend.road.lane import AbstractLane
-    from reward_shaping.envs.highway_env_RSS.env_backend.road.road import Road
+    from reward_shaping.envs.highway_env_original.env_backend.road.lane import AbstractLane
+    from reward_shaping.envs.highway_env_original.env_backend.road.road import Road
 
 LaneIndex = Tuple[str, str, int]
 

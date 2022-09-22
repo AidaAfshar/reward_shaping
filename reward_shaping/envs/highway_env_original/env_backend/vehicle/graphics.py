@@ -4,13 +4,13 @@ from typing import List, Tuple, TYPE_CHECKING
 import numpy as np
 import pygame
 
-from reward_shaping.envs.highway_env_RSS.env_backend.utils import Vector
-from reward_shaping.envs.highway_env_RSS.env_backend.vehicle.dynamics import BicycleVehicle
-from reward_shaping.envs.highway_env_RSS.env_backend.vehicle.kinematics import Vehicle
-from reward_shaping.envs.highway_env_RSS.env_backend.vehicle.behavior import IDMVehicle, LinearVehicle
+from reward_shaping.envs.highway_env_original.env_backend.utils import Vector
+from reward_shaping.envs.highway_env_original.env_backend.vehicle.dynamics import BicycleVehicle
+from reward_shaping.envs.highway_env_original.env_backend.vehicle.kinematics import Vehicle
+from reward_shaping.envs.highway_env_original.env_backend.vehicle.behavior import IDMVehicle, LinearVehicle
 
 if TYPE_CHECKING:
-    from reward_shaping.envs.highway_env_RSS.env_backend.road.graphics import WorldSurface
+    from reward_shaping.envs.highway_env_original.env_backend.road.graphics import WorldSurface
 
 
 class VehicleGraphics(object):

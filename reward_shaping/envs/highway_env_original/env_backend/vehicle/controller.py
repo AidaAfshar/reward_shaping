@@ -2,10 +2,10 @@ from typing import List, Tuple, Union, Optional
 
 import numpy as np
 import copy
-from reward_shaping.envs.highway_env_RSS.env_backend import utils
-from reward_shaping.envs.highway_env_RSS.env_backend.road.road import Road, LaneIndex, Route
-from reward_shaping.envs.highway_env_RSS.env_backend.utils import Vector
-from reward_shaping.envs.highway_env_RSS.env_backend.vehicle.kinematics import Vehicle
+from reward_shaping.envs.highway_env_original.env_backend import utils
+from reward_shaping.envs.highway_env_original.env_backend.road.road import Road, LaneIndex, Route
+from reward_shaping.envs.highway_env_original.env_backend.utils import Vector
+from reward_shaping.envs.highway_env_original.env_backend.vehicle.kinematics import Vehicle
 
 
 class ControlledVehicle(Vehicle):
@@ -204,7 +204,8 @@ class MDPVehicle(ControlledVehicle):
 
     """A controlled vehicle with a specified discrete range of allowed target speeds."""
     # DEFAULT_TARGET_SPEEDS = np.linspace(20, 30, 3)
-    DEFAULT_TARGET_SPEEDS = np.linspace(19, 25, 8)
+    DEFAULT_TARGET_SPEEDS = np.linspace(20, 30, 6)
+    # DEFAULT_TARGET_SPEEDS = np.linspace(19, 25, 8)
 
     def __init__(self,
                  road: Road,

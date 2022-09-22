@@ -2,11 +2,11 @@ import numpy as np
 import logging
 from typing import List, Tuple, Dict, TYPE_CHECKING, Optional
 
-from reward_shaping.envs.highway_env_RSS.env_backend.road.lane import LineType, StraightLane, AbstractLane, lane_from_config
-from reward_shaping.envs.highway_env_RSS.env_backend.vehicle.objects import Landmark
+from reward_shaping.envs.highway_env_original.env_backend.road.lane import LineType, StraightLane, AbstractLane, lane_from_config
+from reward_shaping.envs.highway_env_original.env_backend.vehicle.objects import Landmark
 
 if TYPE_CHECKING:
-    from reward_shaping.envs.highway_env_RSS.env_backend.vehicle import kinematics, objects
+    from reward_shaping.envs.highway_env_original.env_backend.vehicle import kinematics, objects
 
 logger = logging.getLogger(__name__)
 

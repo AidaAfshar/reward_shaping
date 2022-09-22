@@ -3,14 +3,14 @@ from typing import List, Tuple, Union, TYPE_CHECKING
 import numpy as np
 import pygame
 
-from reward_shaping.envs.highway_env_RSS.env_backend.road.lane import LineType, AbstractLane
-from reward_shaping.envs.highway_env_RSS.env_backend.road.road import Road
-from reward_shaping.envs.highway_env_RSS.env_backend.utils import Vector
-from reward_shaping.envs.highway_env_RSS.env_backend.vehicle.graphics import VehicleGraphics
-from reward_shaping.envs.highway_env_RSS.env_backend.vehicle.objects import Obstacle, Landmark
+from reward_shaping.envs.highway_env_original.env_backend.road.lane import LineType, AbstractLane
+from reward_shaping.envs.highway_env_original.env_backend.road.road import Road
+from reward_shaping.envs.highway_env_original.env_backend.utils import Vector
+from reward_shaping.envs.highway_env_original.env_backend.vehicle.graphics import VehicleGraphics
+from reward_shaping.envs.highway_env_original.env_backend.vehicle.objects import Obstacle, Landmark
 
 if TYPE_CHECKING:
-    from reward_shaping.envs.highway_env_RSS.env_backend.vehicle.objects import RoadObject
+    from reward_shaping.envs.highway_env_original.env_backend.vehicle.objects import RoadObject
 
 PositionType = Union[Tuple[float, float], np.ndarray]
 

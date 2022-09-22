@@ -7,13 +7,13 @@ from gym.wrappers import RecordVideo
 from gym.utils import seeding
 import numpy as np
 
-from reward_shaping.envs.highway_env_RSS.env_backend import utils
-from reward_shaping.envs.highway_env_RSS.env_backend.env.action import action_factory, Action, DiscreteMetaAction, ActionType
-from reward_shaping.envs.highway_env_RSS.env_backend.env.observation import observation_factory, ObservationType
-from reward_shaping.envs.highway_env_RSS.env_backend.env.finite_mdp import finite_mdp
-from reward_shaping.envs.highway_env_RSS.env_backend.env.graphics import EnvViewer
-from reward_shaping.envs.highway_env_RSS.env_backend.vehicle.behavior import IDMVehicle, LinearVehicle
-from reward_shaping.envs.highway_env_RSS.env_backend.vehicle.kinematics import Vehicle
+from reward_shaping.envs.highway_env_original.env_backend import utils
+from reward_shaping.envs.highway_env_original.env_backend.env.action import action_factory, Action, DiscreteMetaAction, ActionType
+from reward_shaping.envs.highway_env_original.env_backend.env.observation import observation_factory, ObservationType
+from reward_shaping.envs.highway_env_original.env_backend.env.finite_mdp import finite_mdp
+from reward_shaping.envs.highway_env_original.env_backend.env.graphics import EnvViewer
+from reward_shaping.envs.highway_env_original.env_backend.vehicle.behavior import IDMVehicle, LinearVehicle
+from reward_shaping.envs.highway_env_original.env_backend.vehicle.kinematics import Vehicle
 
 Observation = np.ndarray
 
@@ -97,7 +97,7 @@ class AbstractEnv(gym.Env):
             },
             "simulation_frequency": 15,  # [Hz]
             "policy_frequency": 1,  # [Hz]
-            "other_vehicles_type": "reward_shaping.envs.highway_env_RSS.env_backend.vehicle.behavior.IDMVehicle",
+            "other_vehicles_type": "reward_shaping.envs.highway_env_original.env_backend.vehicle.behavior.IDMVehicle",
             "screen_width": 600,  # [px]
             "screen_height": 150,  # [px]
             "centering_position": [0.3, 0.5],

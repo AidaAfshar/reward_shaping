@@ -3,9 +3,9 @@ from typing import Tuple
 import numpy as np
 import matplotlib.pyplot as plt
 
-from reward_shaping.envs.highway_env_RSS.env_backend.road.road import Road
-from reward_shaping.envs.highway_env_RSS.env_backend.utils import Vector
-from reward_shaping.envs.highway_env_RSS.env_backend.vehicle.kinematics import Vehicle
+from reward_shaping.envs.highway_env_original.env_backend.road.road import Road
+from reward_shaping.envs.highway_env_original.env_backend.utils import Vector
+from reward_shaping.envs.highway_env_original.env_backend.vehicle.kinematics import Vehicle
 
 
 class BicycleVehicle(Vehicle):

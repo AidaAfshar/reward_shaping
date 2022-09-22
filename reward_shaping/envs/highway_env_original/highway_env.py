@@ -3,15 +3,15 @@ from typing import Dict, Text
 import gym
 import numpy as np
 
-from reward_shaping.envs.highway_env_RSS.env_backend import utils
-from reward_shaping.envs.highway_env_RSS.env_backend.env.abstract import AbstractEnv
-from reward_shaping.envs.highway_env_RSS.env_backend.env.action import Action
-from reward_shaping.envs.highway_env_RSS.env_backend.env.observation import observation_factory
-from reward_shaping.envs.highway_env_RSS.env_backend.road.road import Road, RoadNetwork
-from reward_shaping.envs.highway_env_RSS.env_backend.utils import near_split
-from reward_shaping.envs.highway_env_RSS.env_backend.vehicle.controller import ControlledVehicle
-from reward_shaping.envs.highway_env_RSS.env_backend.vehicle.kinematics import Vehicle
-from reward_shaping.envs.highway_env_RSS import highway_utils
+from reward_shaping.envs.highway_env_original.env_backend import utils
+from reward_shaping.envs.highway_env_original.env_backend.env.abstract import AbstractEnv
+from reward_shaping.envs.highway_env_original.env_backend.env.action import Action
+from reward_shaping.envs.highway_env_original.env_backend.env.observation import observation_factory
+from reward_shaping.envs.highway_env_original.env_backend.road.road import Road, RoadNetwork
+from reward_shaping.envs.highway_env_original.env_backend.utils import near_split
+from reward_shaping.envs.highway_env_original.env_backend.vehicle.controller import ControlledVehicle
+from reward_shaping.envs.highway_env_original.env_backend.vehicle.kinematics import Vehicle
+from reward_shaping.envs.highway_env_original import highway_utils
 
 from gym.spaces import Box
 

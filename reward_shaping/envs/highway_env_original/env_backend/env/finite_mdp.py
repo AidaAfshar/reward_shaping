@@ -4,11 +4,11 @@ from typing import TYPE_CHECKING, Optional
 
 import numpy as np
 
-from reward_shaping.envs.highway_env_RSS.env_backend import utils
-from reward_shaping.envs.highway_env_RSS.env_backend.vehicle.kinematics import Vehicle
+from reward_shaping.envs.highway_env_original.env_backend import utils
+from reward_shaping.envs.highway_env_original.env_backend.vehicle.kinematics import Vehicle
 
 if TYPE_CHECKING:
-    from reward_shaping.envs.highway_env_RSS.env_backend.env.abstract import AbstractEnv
+    from reward_shaping.envs.highway_env_original.env_backend.env.abstract import AbstractEnv
 
 
 def finite_mdp(env: 'AbstractEnv',
