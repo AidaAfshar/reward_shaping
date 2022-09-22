@@ -3,9 +3,8 @@ from reward_shaping.core.reward import RewardFunction
 from typing import List
 from typing import Union
 import numpy as np
-import reward_shaping.envs.highway_env_RSS.highway_utils as highway_utils
 from reward_shaping.core.utils import clip_and_norm
-from reward_shaping.envs.highway_env_RSS.specs import get_all_specs
+from reward_shaping.envs.highway_env_original.specs import get_all_specs
 
 gamma = 1.0
 
