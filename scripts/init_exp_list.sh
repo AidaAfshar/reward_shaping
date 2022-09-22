@@ -77,10 +77,21 @@ args=(
   ##
   ## Highway-env
   ##
-  "highway_env reach_target ppo ${logdir} 3 default ${short_steps}"
-  "highway_env reach_target ppo ${logdir} 3 hprs ${short_steps}"
-  "highway_env reach_target ppo ${logdir} 3 tltl ${short_steps}"
-  "highway_env reach_target ppo ${logdir} 3 bhnr ${short_steps}"
-  "highway_env reach_target ppo ${logdir} 3 morl_uni ${short_steps}"
-  "highway_env reach_target ppo ${logdir} 3 morl_dec ${short_steps}"
+  "highway_env_RSS reach_target ppo ${logdir} 3 default ${short_steps}"
+  "highway_env_RSS reach_target ppo ${logdir} 3 hprs ${short_steps}"
+  "highway_env_RSS reach_target ppo ${logdir} 3 tltl ${short_steps}"
+  "highway_env_RSS reach_target ppo ${logdir} 3 bhnr ${short_steps}"
+  "highway_env_RSS reach_target ppo ${logdir} 3 morl_uni ${short_steps}"
+  "highway_env_RSS reach_target ppo ${logdir} 3 morl_dec ${short_steps}"
+
+  ## Highway-env
+  ##
+  "highway_env_original reach_target ppo ${logdir} 5 default ${short_steps}"
+  "highway_env_original reach_target ppo ${logdir} 5 hprs ${short_steps}"
+  "highway_env_original reach_target ppo ${logdir} 5 tltl ${short_steps}"
+  "highway_env_original reach_target ppo ${logdir} 5 bhnr ${short_steps}"
+  "highway_env_original reach_target ppo ${logdir} 5 morl_uni ${short_steps}"
+  "highway_env_original reach_target ppo ${logdir} 5 morl_dec ${short_steps}"
+
+
 )

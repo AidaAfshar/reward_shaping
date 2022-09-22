@@ -1,0 +1,37 @@
+REACTION_TIME: 0.1 # s   # TAU # 0.1-0.5 for humans
+
+# LONGITUDINAL QUANTITIES
+ACCEL_MAX: 5 # M / S^2
+BRAKE_MAX: 5 # M / S^2
+BRAKE_MIN: 1 # M / S^2
+JERK_MAX: 2 # M/S^3
+BRAKE_ABRUPT: -2.5 # M / S^2
+LON_DIST_NORMALIZER: 0.06  #org = 0.4
+
+# LATERAL QUANTITIES
+LAT_DIST_MARGIN: 1 # M    # mu
+LAT_ACCEL_MAX: 3.5 # M/S^2
+LAT_MIN_BR: 0.7 # M/S^2
+LAT_MAX_JERK: 1.5 # M/S^3
+LAT_DIST_NORMALIZER: 0.02
+
+# HIGHWAY
+max_steps: 30
+
+lanes_count: 3
+lane_width: 3  # M
+vehicle_width: 2   # M
+vehicle_length: 5  # M
+
+target_x: 750
+target_distance_tol: 20
+
+x_limit: 2000
+y_limit: 50
+vx_limit: 40
+vy_limit: 40
+
+speed_lower_bound: 20
+speed_upper_bound: 30
+speed_tol: 5
+

@@ -112,8 +112,8 @@ venv/
 recording/
 cartpole_videos_and_models/
 runs/
-ENV/
-env.bak/
+# ENV/
+# env.bak/
 venv.bak/
 
 # Spyder project settings

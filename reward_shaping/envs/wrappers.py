@@ -63,7 +63,7 @@ class HighwayFilterObservationWrapper(gym.Wrapper):
         super(HighwayFilterObservationWrapper, self).__init__(env)
         self._obs_list = obs_list
         # self.observation_space = self.env.observation_space
-        from reward_shaping.envs.highway_env.env_backend.env.observation import observation_factory
+        from reward_shaping.envs.highway_env_RSS.env_backend.env.observation import observation_factory
         self.observation_space = observation_factory(env, env.config["observation"]).space()
 
     def _filter_obs(self, original_obs):
