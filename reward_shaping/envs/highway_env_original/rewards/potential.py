@@ -22,12 +22,13 @@ def target_reach_potential(state, info):
 def comfort_higher_speed_potential(state, info):
     assert 'ego_vx' in state
     assert 'speed_lower_bound' in info and 'speed_upper_bound' in info
-    return 1-clip_and_norm(abs(info['speed_upper_bound'] - state['ego_vx']), info['speed_tol'], info['speed_upper_bound']-info['speed_tol'])
+    return 1-clip_and_norm(abs(info['speed_upper_bound'] - state['ego_vx']), info['speed_tol'], info['speed_upper_bound'] - info['speed_tol'])
 
 
 def comfort_right_lane_potential(state, info):
-    assert 'ego_lane_index' in state and 'lanes_count' in info
-    return clip_and_norm(state['ego_lane_index'], 0, info['lanes_count']-1)
+    assert 'ego_y' in state
+    assert 'target_lane_y' in info and 'target_lane_tol' in info and 'max_y' in info
+    return 1-clip_and_norm(abs(state['ego_y']-info['target_lane_y']), info['target_lane_tol'], info['max_y']-info['target_lane_y'])
 
 
 def simple_base_reward(state, info):

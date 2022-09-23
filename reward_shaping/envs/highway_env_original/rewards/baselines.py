@@ -56,7 +56,8 @@ class HighwayEvalConfig(EvalConfig):
     def monitoring_variables(self) -> List[str]:
         return ['time', 'max_steps',
                 'ego_x', 'ego_y', 'ego_vx', 'ego_vy',
-                'ego_lane_index', 'lanes_count', 'max_lane_index',
+                'ego_lane_index', 'lanes_count',
+                'max_y', 'target_lane_y', 'target_lane_tol', 'lane_dif',
                 'collision',
                 'road_progress', 'distance_to_target', 'target_x', 'target_distance_tol',
                 'x_limit', 'y_limit', 'vx_limit', 'vy_limit',
@@ -66,7 +67,8 @@ class HighwayEvalConfig(EvalConfig):
     def monitoring_types(self) -> List[str]:
         return ['int', 'int',
                 'float', 'float', 'float', 'float',
-                'float', 'float', 'float',
+                'float', 'float',
+                'float', 'float', 'float', 'float',
                 'float',
                 'float', 'float', 'float', 'float',
                 'float', 'float', 'float', 'float',
@@ -82,7 +84,10 @@ class HighwayEvalConfig(EvalConfig):
             'ego_vy': state['ego_vy'],
             'ego_lane_index': state['ego_lane_index'],
             'lanes_count': info['lanes_count'],
-            'max_lane_index': info['lanes_count'] - 1,
+            'max_y': info['max_y'],
+            'target_lane_y': info['target_lane_y'],
+            'target_lane_tol': info['target_lane_tol'],
+            'lane_dif': abs(state['ego_y'] - info['target_lane_y']),
             'collision': state['collision'],
             'road_progress': state['road_progress'],
             'distance_to_target': state['distance_to_target'],
@@ -114,7 +119,7 @@ class HighwayEvalConfig(EvalConfig):
                                          vars=self.monitoring_variables, types=self.monitoring_types,
                                          episode=episode)[0][1]
         comfort_highspeed_spec = "(speed_dif <= speed_tol)"
-        comfort_rightlane_spec = "(ego_lane_index == max_lane_index)"
+        comfort_rightlane_spec = "(lane_dif == target_lane_tol)"
         comfort_metrics = []
         for comfort_spec in [comfort_highspeed_spec, comfort_rightlane_spec]:
             comfort_trace = monitor_stl_episode(stl_spec=comfort_spec,

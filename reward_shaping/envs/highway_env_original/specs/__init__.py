@@ -18,7 +18,7 @@ def register_spec(name, operator, build_predicate):
 
 
 def _build_no_collision(_):
-    return lambda state, info: -1 if state['collision'] == 1 else +1
+    return lambda state, info: -1 if (state['collision'] == 1) else +1
 
 
 def _build_high_speed(_):
@@ -26,7 +26,7 @@ def _build_high_speed(_):
 
 
 def _build_right_lane(_):
-    return lambda state, info: (np.clip(state['ego_lane_index'], 0, info['lanes_count']-1)) / info['lanes_count']
+    return lambda state, info: info['target_lane_tol'] - abs(state['ego_y'] - info['target_lane_y'])
 
 
 def _build_reach_target(_):

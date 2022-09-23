@@ -233,6 +233,9 @@ class HighwayEnvHPRS(HighwayEnvFast):
         info['vx_limit'] = self._params['vx_limit']
         info['vy_limit'] = self._params['vy_limit']
         info['lanes_count'] = self._params['lanes_count']
+        info['max_y'] = self._params['lanes_count'] * self._params['lane_width']
+        info['target_lane_tol'] = self._params['lane_width'] / 2
+        info['target_lane_y'] = info['max_y'] - info['target_lane_tol']
         info['max_steps'] = self._params['max_steps']
         info['speed_lower_bound'] = self._params['speed_lower_bound']
         info['speed_upper_bound'] = self._params['speed_upper_bound']
