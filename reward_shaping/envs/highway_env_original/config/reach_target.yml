@@ -6,7 +6,7 @@ lane_width: 3  # M
 vehicle_width: 2   # M
 vehicle_length: 5  # M
 
-target_x: 800
+target_x: 900
 target_distance_tol: 20
 
 x_limit: 2000
