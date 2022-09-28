@@ -36,7 +36,7 @@ def _get_highway_default_monitoring_procedure(state, done, info):
 
 
 class HighwaySTLReward(TLRewardConfig):
-    _safe_distance = "always(collision<0)"
+    _safe_distance = "always(collision<=0)"
     _reach_target = "eventually(distance_to_target <= target_distance_tol)"
 
     @property

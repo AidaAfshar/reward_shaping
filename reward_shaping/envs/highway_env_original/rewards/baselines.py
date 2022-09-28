@@ -110,7 +110,7 @@ class HighwayEvalConfig(EvalConfig):
         i_init = np.nonzero(episode['time'] == np.min(episode['time']))[-1][-1]
         episode = {k: list(l)[i_init:] for k, l in episode.items()}
         #
-        safety_spec = "always(collision==0)"
+        safety_spec = "always(collision <= 0)"
         safety_rho = monitor_stl_episode(stl_spec=safety_spec,
                                          vars=self.monitoring_variables, types=self.monitoring_types,
                                          episode=episode)[0][1]
@@ -119,7 +119,7 @@ class HighwayEvalConfig(EvalConfig):
                                          vars=self.monitoring_variables, types=self.monitoring_types,
                                          episode=episode)[0][1]
         comfort_highspeed_spec = "(speed_dif <= speed_tol)"
-        comfort_rightlane_spec = "(lane_dif == target_lane_tol)"
+        comfort_rightlane_spec = "(lane_dif <= target_lane_tol)"
         comfort_metrics = []
         for comfort_spec in [comfort_highspeed_spec, comfort_rightlane_spec]:
             comfort_trace = monitor_stl_episode(stl_spec=comfort_spec,

@@ -14,7 +14,8 @@ from reward_shaping.training.utils import make_env
 
 def parse_env_task(filepath: str):
     env, task = None, None
-    for env_name in ["cart_pole_obst", "bipedal_walker", "lunar_lander", "racecar2", "racecar"]:
+    for env_name in ["cart_pole_obst", "bipedal_walker", "lunar_lander",
+                     "racecar2", "racecar", "highway_env_RSS", "highway_env_original"]:
         if env_name in filepath:
             env = env_name
             break

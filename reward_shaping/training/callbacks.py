@@ -55,7 +55,7 @@ class VideoRecorderCallback(BaseCallback):
             )
             self.logger.record(
                 "trajectory/video",
-                Video(th.ByteTensor([screens]), fps=40),
+                Video(th.ByteTensor([screens]), fps=15),    # org_fps: 40
                 exclude=("stdout", "log", "json", "csv"),
             )
         return True

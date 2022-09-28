@@ -9,9 +9,10 @@ from reward_shaping.envs.highway_env_original.specs import get_all_specs
 gamma = 1.0
 
 
-def safety_no_collision_potential(state, info):
+def safety_collision_potential(state, info):
     assert 'collision' in state
-    return 0 if (state['collision'] == 1) else 1
+    collision = (state["collision"] <= 0)
+    return float(collision)
 
 
 def target_reach_potential(state, info):
@@ -21,14 +22,14 @@ def target_reach_potential(state, info):
 
 def comfort_higher_speed_potential(state, info):
     assert 'ego_vx' in state
-    assert 'speed_lower_bound' in info and 'speed_upper_bound' in info
-    return 1-clip_and_norm(abs(info['speed_upper_bound'] - state['ego_vx']), info['speed_tol'], info['speed_upper_bound'] - info['speed_tol'])
+    assert 'speed_tol' in info and 'speed_upper_bound' in info
+    return 1-clip_and_norm(abs(info['speed_upper_bound'] - state['ego_vx']), info['speed_tol'], info['speed_upper_bound'] - info['speed_lower_bound'] - info['speed_tol'])
 
 
 def comfort_right_lane_potential(state, info):
     assert 'ego_y' in state
     assert 'target_lane_y' in info and 'target_lane_tol' in info and 'max_y' in info
-    return 1-clip_and_norm(abs(state['ego_y']-info['target_lane_y']), info['target_lane_tol'], info['max_y']-info['target_lane_y'])
+    return 1-clip_and_norm(abs(state['ego_y']-info['target_lane_y']), info['target_lane_tol'], info['target_lane_y'] - info['target_lane_tol'])
 
 
 def simple_base_reward(state, info):
@@ -41,13 +42,13 @@ class HighwayHierarchicalPotentialShaping(RewardFunction):
 
 
     def _safety_potential(self, state, info):
-        safety_reward = safety_no_collision_potential(state, info)
+        safety_reward = safety_collision_potential(state, info)
         return safety_reward
 
     def _target_potential(self, state, info):
         target_reward = target_reach_potential(state, info)
         # hierarchical weights
-        safety_weight = safety_no_collision_potential(state, info)
+        safety_weight = safety_collision_potential(state, info)
         return safety_weight * target_reward
 
     def _comfort_potential(self, state, info):
@@ -55,7 +56,7 @@ class HighwayHierarchicalPotentialShaping(RewardFunction):
         c2 = comfort_right_lane_potential(state, info)
         comfort_reward = c1 + c2
         # hierarchical weights
-        safety_weight = safety_no_collision_potential(state, info)
+        safety_weight = safety_collision_potential(state, info)
         target_weight = target_reach_potential(state, info)
         return safety_weight * target_weight * comfort_reward
 
@@ -83,7 +84,7 @@ class HighwayScalarizedMultiObjectivization(RewardFunction):
         if info["done"]:
             return base_reward
         # evaluate individual shaping functions
-        shaping_safety = gamma * safety_no_collision_potential(next_state, info) - safety_no_collision_potential(state, info)
+        shaping_safety = gamma * safety_collision_potential(next_state, info) - safety_collision_potential(state, info)
         shaping_target = gamma * target_reach_potential(next_state, info) - target_reach_potential(state, info)
         shaping_highspeed = gamma * comfort_higher_speed_potential(next_state, info) - comfort_higher_speed_potential(state, info)
         shaping_rightlane = gamma * comfort_right_lane_potential(next_state, info) - comfort_right_lane_potential(state, info)

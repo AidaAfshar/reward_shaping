@@ -35,5 +35,5 @@ def _build_reach_target(_):
 
 register_spec("s1_nocollision", Operator.ENSURE, _build_no_collision)
 register_spec("t_origin", Operator.ACHIEVE, _build_reach_target)
-register_spec("c1_highspeed", Operator.ENCOURAGE, _build_right_lane)
+register_spec("c1_highspeed", Operator.ENCOURAGE, _build_high_speed)
 register_spec("c2_rightlane", Operator.ENCOURAGE, _build_right_lane)

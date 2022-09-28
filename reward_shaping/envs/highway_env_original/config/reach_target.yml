@@ -16,5 +16,5 @@ vy_limit: 40
 
 speed_lower_bound: 20
 speed_upper_bound: 30
-speed_tol: 4
+speed_tol: 3
 
