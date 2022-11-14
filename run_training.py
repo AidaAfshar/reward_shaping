@@ -27,7 +27,7 @@ if __name__ == "__main__":
     parser.add_argument("--env", type=str, required=True, choices=envs)
     parser.add_argument("--task", type=str, required=True, help="task executed for the env")
     parser.add_argument("--reward", type=str, required=True, help="identifier of reward definition")
-    parser.add_argument("--steps", type=int, default=1e6, help="nr training steps")
+    parser.add_argument("--steps", type=int, default=2e6, help="nr training steps")
     parser.add_argument("--n_seeds", type=int, default=1, help="nr runs, each with a different rnd seed")
     parser.add_argument("--algo", type=str, default="sac", help="rl algorithm used for training")
     parser.add_argument("--expdir", type=str, default=None, help="name of intermediate dir to group experiments")

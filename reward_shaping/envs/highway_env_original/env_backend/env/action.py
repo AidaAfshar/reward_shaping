@@ -236,6 +236,7 @@ class DiscreteMetaAction(ActionType):
         return functools.partial(MDPVehicle, target_speeds=self.target_speeds)
 
     def act(self, action: int) -> None:
+        action = int(action)    # added
         self.controlled_vehicle.act(self.actions[action])
 
     def get_available_actions(self) -> List[int]:

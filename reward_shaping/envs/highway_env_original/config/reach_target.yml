@@ -6,7 +6,7 @@ lane_width: 3  # M
 vehicle_width: 2   # M
 vehicle_length: 5  # M
 
-target_x: 700
+target_x: 750
 target_distance_tol: 20
 
 x_limit: 2000
@@ -16,5 +16,5 @@ vy_limit: 40
 
 speed_lower_bound: 20
 speed_upper_bound: 30
-speed_tol: 3
+speed_tol: 5
 
