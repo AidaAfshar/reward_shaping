@@ -86,12 +86,12 @@ args=(
 #  "highway_env_RSS reach_target ppo ${logdir} 3 morl_dec ${short_steps}"
   ## Highway-env
   ##
-  "highway_env_original reach_target ppo ${logdir} 5 default ${long_steps}"
-  "highway_env_original reach_target ppo ${logdir} 5 hprs ${long_steps}"
-  "highway_env_original reach_target ppo ${logdir} 5 tltl ${long_steps}"
-  "highway_env_original reach_target ppo ${logdir} 5 bhnr ${long_steps}"
-  "highway_env_original reach_target ppo ${logdir} 5 morl_uni ${long_steps}"
-  "highway_env_original reach_target ppo ${logdir} 5 morl_dec ${long_steps}"
+  "highway_env_original reach_target ppo ${logdir} 2 default ${long_steps}"
+  "highway_env_original reach_target ppo ${logdir} 2 hprs ${long_steps}"
+  "highway_env_original reach_target ppo ${logdir} 2 tltl ${long_steps}"
+  "highway_env_original reach_target ppo ${logdir} 2 bhnr ${long_steps}"
+  "highway_env_original reach_target ppo ${logdir} 2 morl_uni ${long_steps}"
+  "highway_env_original reach_target ppo ${logdir} 2 morl_dec ${long_steps}"
 
 
 )
